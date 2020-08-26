@@ -1,0 +1,73 @@
+@media (min-width:900px){
+    body{
+        font-size: 18px;
+    }
+    .lesson-wrapper{
+        display: grid;
+        width: 80%;
+        max-width: 1100px;
+        margin: 0 auto;
+        justify-items: center;
+        grid-template-areas:
+        "h  h"
+        "s  t"
+        "ph  c"
+        "a1  c"
+        "a2  ."
+        "a3  ."
+        ;
+    }
+    .lesson-wrapper header{
+        grid-area: h;
+    }
+    .lesson-wrapper .subHeading{
+        grid-area: s;
+    }
+    .lesson-wrapper .tabs-wrapper{
+        grid-area: t;
+    }
+    .lesson-wrapper .post-head-wrapper{
+        grid-area: ph;
+    }
+    .lesson-wrapper article:nth-of-type(1){
+        grid-area: a1;
+    }
+    .lesson-wrapper article:nth-of-type(2){
+        grid-area: a2;
+    }
+
+    .lesson-wrapper article:nth-of-type(3){
+        grid-area: a3;
+    }
+    .lesson-wrapper .curriculum{
+        grid-area: c;
+    }
+
+    .login-inner{
+        display: flex;
+        background: #F3F5F9;
+        box-shadow: 0px 9px 34px #E7EFFF;
+        border-radius: 8px;
+        overflow: hidden;
+        width: 70%;
+        max-width: 800px;
+    }
+    .log-wrapper{
+        padding: 2em;
+        flex: 1;
+        width: 100%;
+    }
+
+    .login-left{
+        display: flex;
+    }
+    .login-left{
+        background: #EEF1F6;
+        padding: 4em;
+        flex: 1;
+    }
+    .login-left img{
+        width: 250px;
+    }
+
+}
