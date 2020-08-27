@@ -40,7 +40,7 @@ export default function Login(){
                 <label for={type}>
                     {type}
                 </label>
-                <input type={type} id={type} value={userCred.[type]} onChange={handleChange} required/>
+                <input type={type} id={type} value={userCred.type} onChange={handleChange} required/>
             </div>
         )
     }
