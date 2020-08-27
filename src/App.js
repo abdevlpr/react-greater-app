@@ -4,7 +4,7 @@ import {BrowserRouter , Route} from 'react-router-dom'
 import  "./css/comp-mobile.css"
 import  "./css/comp-desktop.css"
 
-import Login from "./components/login"
+
 import Signin from "./pages/Signin"
 import Signup from "./pages/Signup"
 import PassRecover from "./pages/PassRecover"
@@ -16,7 +16,6 @@ export default function App() {
   return (
     <BrowserRouter>
       <div>
-        <Login />
         <TempLinks />
         {/* setting up the routes */}
         <Route exact path="/signin" component={Signin} />
