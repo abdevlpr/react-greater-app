@@ -1,18 +1,8 @@
 import React, {useState} from "react";
-import  "../css/comp-mobile.css"
-import  "../css/comp-desktop.css"
 
-
-const Loggin = (props) => {
-
-    return(
-    <div>
-        this is a component test
-    </div>
-    )
-    
-    }
-
+import loginImg from "../assets/bg/svg/login.svg"
+import signupImg from "../assets/bg/svg/signup.svg"
+import forgotImg from "../assets/bg/svg/forgot-pass.svg"
 
 export default function Login(){
 
@@ -34,31 +24,31 @@ export default function Login(){
     console.log("the state is",userCred)
 
 
-    return(
-        <div className="login flex j-c">
-            <div className="login-inner">
-            <div className="log-wrapper">
-                <h1 className="log-heading t-align-c t-grey2">Welcome
-                    Back</h1>
-                <form action="" onSubmit={handleSubmit}>
-                    <div className="log-input card">
-                        <label for="login-email">
-                            Email
-                        </label>
-                        <input type="email" id="login-email" value={userCred.email} onChange={handleChange} required/>
-                    </div>
-                    <div className="log-input card">
-                        <label for="login-password">
-                            Password
-                        </label>
-                        <input type="password" id="login-password" value={userCred.password} onChange={handleChange} required />
-                    </div>
-                    <div className="des">
-                        <a href="#" className="t-grey1">
-                            Forgot Password?
-                        </a>
-                    </div>
-                    <label for="log-submit" className="btn-next btn-interact" href="#">
+    const LoginMessage = (props)=>{
+        return (
+            <h1 className="log-heading t-align-c t-grey2">
+            {props.message}
+            {/* Welcome Back */}
+            </h1>
+        )
+    }
+    
+    const LoginInput = (props) =>{
+        const type = props.type;
+        return(
+            <div className="log-input card">
+                <label for={type}>
+                    {type}
+                </label>
+                <input type={type} id={type} value={userCred.[type]} onChange={handleChange} required/>
+            </div>
+        )
+    }
+
+    const LoginSubmitBtn = (Props) => {
+        return(
+            <div>
+            <label for="log-submit" className="btn-next btn-interact" href="#">
                         <span>SIGN IN</span>
                         <div className="icon flex j-c">
                             <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -68,14 +58,31 @@ export default function Login(){
                         </div>
                     </label>
                     <input type="submit" id="log-submit" />
+            </div>
+        )
+    }
+
+    return(
+        <div className="login flex j-c">
+            <div className="login-inner">
+            <div className="log-wrapper">
+                <LoginMessage message="welcome back"/>
+                <form action="" onSubmit={handleSubmit}>
+                    <LoginInput type="email"/>
+                    <LoginInput type="password"/>
+                    <div className="des">
+                        <a href="#" className="t-grey1">
+                            Forgot Password?
+                        </a>
+                    </div>
+                    <LoginSubmitBtn />
                     <div className="des">
                         <span className="t-grey2">Don’t have an account? <a href="#" className="t-blue">Sign Up</a></span>
                     </div>
                 </form>
-                <Loggin />
             </div>
             <div className="login-left flex j-c">
-                <img src="https://p1.pxfuel.com/preview/547/119/749/profile-man-portrait-young-take-it-easy-youth-royalty-free-thumbnail.jpg" alt="" />
+                <img src={loginImg}/>
             </div>
         </div>
         </div>
