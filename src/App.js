@@ -1,12 +1,28 @@
 import React from "react";
-import "./style.css";
+import {BrowserRouter , Route} from 'react-router-dom'
+
+import  "./css/comp-mobile.css"
+import  "./css/comp-desktop.css"
+
+import Login from "./components/login"
+import Signin from "./pages/Signin"
+import Signup from "./pages/Signup"
+import PassRecover from "./pages/PassRecover"
+import TempLinks from "./pages/TempLinks"
+
 
 export default function App() {
-  let name = "red"
+  
   return (
-    <div>
-      <h1 className={`${name} blue`}>Hello StackBlitz!</h1>
-      <p>Start this editing to see some magic happen :)</p>
-    </div>
+    <BrowserRouter>
+      <div>
+        <Login />
+        <TempLinks />
+        {/* setting up the routes */}
+        <Route exact path="/signin" component={Signin} />
+        <Route path="/signup" component={Signup} />
+        <Route path="/recover" component={PassRecover} />
+      </div>
+    </BrowserRouter>
   );
 }
